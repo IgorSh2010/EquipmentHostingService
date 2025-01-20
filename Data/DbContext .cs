@@ -52,11 +52,11 @@ namespace NewWebApplication2.Data
             modelBuilder.Entity<ProductionFacility>().HasData(
                 new ProductionFacility { Id = 1, Code = "PF001", Name = "Facility 1", StandardArea = 5000 },
                 new ProductionFacility { Id = 2, Code = "PF002", Name = "Facility 2", StandardArea = 3000 },
-                new ProductionFacility { Id = 1, Code = "PF003", Name = "Facility 3", StandardArea = 2000 },
-                new ProductionFacility { Id = 1, Code = "PF004", Name = "Facility 4", StandardArea = 2500 },
-                new ProductionFacility { Id = 1, Code = "PF005", Name = "Facility 5", StandardArea = 8000 },
-                new ProductionFacility { Id = 1, Code = "PF006", Name = "Facility 6", StandardArea = 10000 },
-                new ProductionFacility { Id = 1, Code = "PF007", Name = "Facility 7", StandardArea = 1000 }
+                new ProductionFacility { Id = 3, Code = "PF003", Name = "Facility 3", StandardArea = 2000 },
+                new ProductionFacility { Id = 4, Code = "PF004", Name = "Facility 4", StandardArea = 2500 },
+                new ProductionFacility { Id = 5, Code = "PF005", Name = "Facility 5", StandardArea = 8000 },
+                new ProductionFacility { Id = 6, Code = "PF006", Name = "Facility 6", StandardArea = 10000 },
+                new ProductionFacility { Id = 7, Code = "PF007", Name = "Facility 7", StandardArea = 1000 }
             );
 
             // Seed Data for EquipmentType
