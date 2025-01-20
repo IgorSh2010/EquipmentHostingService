@@ -1,6 +1,7 @@
-using NewWebApplication2.Data;
+п»їusing NewWebApplication2.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using NewWebApplication2.Middleware;
 
 internal class Program
 {
@@ -16,10 +17,13 @@ internal class Program
         builder.Services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
-        });
-         
+        });         
 
         var app = builder.Build();
+
+        // PodЕ‚Д…czanie middleware w celu sprawdzenia klucza API
+        app.UseMiddleware<ApiKeyMiddleware>();
+
         app.UseRouting();
         app.UseSwagger();
         app.UseSwaggerUI(c =>
@@ -34,35 +38,4 @@ internal class Program
 
         app.Run();
     }
-/*
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddControllers(); // Добавляем поддержку контроллеров
-        services.AddSwaggerGen(c =>
-        {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
-        });
-    }
-
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-    {
-        if (env.IsDevelopment())
-        {
-            app.UseDeveloperExceptionPage();
-        }
-
-        app.UseRouting();
-
-        // Включение Swagger и его UI
-        app.UseSwagger();
-        app.UseSwaggerUI(c =>
-        {
-            c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-        });
-
-        app.UseEndpoints(endpoints =>
-        {
-            endpoints.MapControllers(); // Настройка маршрутов контроллеров
-        });
-    }*/
 }
