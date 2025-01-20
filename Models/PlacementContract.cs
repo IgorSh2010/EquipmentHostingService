@@ -12,7 +12,7 @@
         public int EquipmentTypeId { get; set; }
         public EquipmentType EquipmentType { get; set; } = null!;
 
-        // Ilość urządzeń
+        // Ilość urządzeń (sprzętu)
         public int Quantity { get; set; }
     }
 }
