@@ -3,7 +3,7 @@
     public class ApiKeyMiddleware
     {
         private readonly RequestDelegate _next;
-        private const string ApiKeyHeaderName = "X-Api-Key";
+        private const string ApiKeyHeaderName = "ApiKey";
 
         public ApiKeyMiddleware(RequestDelegate next)
         {
@@ -15,7 +15,7 @@
             // Czytamy API Key z konfiguracji
             var apiKey = configuration["ApiSettings:ApiKey"];
 
-            // Sprawdzamy obecność nagłówka X-Api-Key
+            // Sprawdzamy obecność nagłówka apiKey
             if (!context.Request.Headers.TryGetValue(ApiKeyHeaderName, out var extractedApiKey))
             {
                 context.Response.StatusCode = 401; // Unauthorized
